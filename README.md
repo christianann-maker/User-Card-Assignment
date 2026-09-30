@@ -12,9 +12,8 @@ as a card (avatar, name, email) in a grid, matching the assignment's mockup.
 
 ## Running it
 
-Because the app uses `fetch()` to load `data.json`, most browsers block that
-when you open `index.html` directly from disk (a CORS restriction on the
-`file://` protocol). Run it through a local server instead:
+Recommended: run it through a local server, since `fetch()` works most
+reliably that way.
 
 **Option A - VS Code Live Server extension**
 1. Install the "Live Server" extension in VS Code.
@@ -25,3 +24,8 @@ when you open `index.html` directly from disk (a CORS restriction on the
 python -m http.server 8000
 ```
 Then open `http://localhost:8000` in your browser.
+
+**Option C - just double-click index.html**
+This also works. Most browsers block `fetch()` on a `file://` page (a CORS
+restriction), so `script.js` falls back to an embedded copy of the same data
+in that case and renders the cards anyway.
